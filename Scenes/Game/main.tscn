@@ -333,7 +333,7 @@ texture_region_size = Vector2i(32, 32)
 9:5/0/physics_layer_0/angular_velocity = 0.0
 9:5/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 9:5/0/physics_layer_1/angular_velocity = 0.0
-9:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, 0, 0, -8, 16, 0, 0, 8)
+9:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, 0, 0, 8, 16, 0, 6.01041, -16.2635, -1.41422, -16.2635, -7.77818, -12.3744)
 10:5/0 = 0
 10:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:5/0/physics_layer_0/angular_velocity = 0.0
@@ -706,7 +706,7 @@ texture_region_size = Vector2i(18, 18)
 4:4/0 = 0
 4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_0/angular_velocity = 0.0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, 0, 0, -9, 9, 0, 0, 9)
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, 0, -0.875, -5.75, 9, 0, 0, 9)
 
 [sub_resource type="TileSet" id="TileSet_b44wm"]
 tile_shape = 1
