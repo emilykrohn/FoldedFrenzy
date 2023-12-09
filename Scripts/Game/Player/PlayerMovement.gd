@@ -3,6 +3,7 @@ extends Node
 var horizontal_direction
 var vertical_direction
 var has_moved = false
+var direction = "LeftDown"
 
 func movement(speed):
 	horizontal_direction = Input.get_axis("ui_left", "ui_right")
@@ -10,6 +11,7 @@ func movement(speed):
 	
 	if horizontal_direction and vertical_direction:
 		get_parent().velocity = Vector2(horizontal_direction, vertical_direction).normalized() * speed
+		direction = get_direction()
 		has_moved = true
 	else:
 		get_parent().velocity = Vector2.ZERO
