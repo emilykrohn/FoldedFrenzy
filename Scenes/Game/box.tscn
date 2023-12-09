@@ -30,6 +30,7 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_fnego")
 
 [node name="EnteredRange" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("3_swuub")
 
 [connection signal="body_entered" from="Area2D" to="EnteredRange" method="_on_area_2d_body_entered"]
