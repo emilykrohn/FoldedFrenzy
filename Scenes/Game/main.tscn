@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cacx2ssg873ai"]
+[gd_scene load_steps=8 format=3 uid="uid://cacx2ssg873ai"]
 
 [ext_resource type="Texture2D" uid="uid://bekl61w57ow7b" path="res://Art/isometric tileset/spritesheet.png" id="1_3myya"]
 [ext_resource type="Texture2D" uid="uid://75smewi58w2h" path="res://Art/isometric boxes - free pixel assets/boxes_SpriteSheet.png" id="2_glt8d"]
+[ext_resource type="PackedScene" uid="uid://dpo4ehchb8rhu" path="res://Scenes/Game/Player/player.tscn" id="3_j0ou4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jl3kj"]
 texture = ExtResource("1_3myya")
@@ -209,7 +210,6 @@ texture_region_size = Vector2i(32, 32)
 7:3/0 = 0
 7:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:3/0/physics_layer_0/angular_velocity = 0.0
-7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 0, -8, 16, 0, 0, 8)
 7:3/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 7:3/0/physics_layer_1/angular_velocity = 0.0
 8:3/0 = 0
@@ -741,3 +741,5 @@ layer_0/tile_data = PackedInt32Array(327677, 0, 0, 786428, 65536, 0, 720898, 196
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 92)
 zoom = Vector2(3, 3)
+
+[node name="Player" parent="." instance=ExtResource("3_j0ou4")]
