@@ -387,6 +387,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0d5p3"]
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
+collision_mask = 6
 script = ExtResource("1_k456v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
