@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmye257e6ggo6"]
+[gd_scene load_steps=8 format=3 uid="uid://dmye257e6ggo6"]
 
 [ext_resource type="Script" path="res://Scenes/Game/box.gd" id="1_o6oin"]
 [ext_resource type="Texture2D" uid="uid://75smewi58w2h" path="res://Art/isometric boxes - free pixel assets/boxes_SpriteSheet.png" id="1_puy3r"]
+[ext_resource type="PackedScene" uid="uid://bfejv2jtwjofa" path="res://Scenes/Game/Animals/stag.tscn" id="2_o5rm5"]
 [ext_resource type="Script" path="res://Scenes/Game/EnteredRange.gd" id="3_swuub"]
+[ext_resource type="Script" path="res://Scripts/Game/Spawn.gd" id="4_idhfx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iskay"]
 radius = 8.0
@@ -14,6 +16,7 @@ size = Vector2(24, 25)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_o6oin")
+stag_scene = ExtResource("2_o5rm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_puy3r")
@@ -32,6 +35,10 @@ shape = SubResource("RectangleShape2D_fnego")
 [node name="EnteredRange" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_swuub")
+
+[node name="Spawn" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_idhfx")
 
 [connection signal="body_entered" from="Area2D" to="EnteredRange" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="EnteredRange" method="_on_area_2d_body_exited"]
