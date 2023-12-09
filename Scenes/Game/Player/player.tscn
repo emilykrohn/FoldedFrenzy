@@ -1,8 +1,9 @@
-[gd_scene load_steps=54 format=3 uid="uid://dpo4ehchb8rhu"]
+[gd_scene load_steps=55 format=3 uid="uid://dpo4ehchb8rhu"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Player/player.gd" id="1_k456v"]
 [ext_resource type="Texture2D" uid="uid://b8dealpmamjnj" path="res://Art/critters/wolf/wolf-idle.png" id="1_kh8uv"]
 [ext_resource type="Texture2D" uid="uid://bv1112ny377df" path="res://Art/critters/wolf/wolf-run.png" id="2_rtrw7"]
+[ext_resource type="Script" path="res://Scripts/Game/Player/PlayerMovement.gd" id="4_w8wrq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_myacw"]
 atlas = ExtResource("1_kh8uv")
@@ -395,3 +396,7 @@ frame_progress = 0.00727788
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0d5p3")
+
+[node name="PlayerMovement" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_w8wrq")
