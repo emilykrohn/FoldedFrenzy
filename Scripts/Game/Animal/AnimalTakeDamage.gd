@@ -22,6 +22,8 @@ func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		can_be_damaged = false
 
+func _on_modulate_cooldown_timeout():
+	animated_sprite_2d.modulate = original_modulate
+
 func _on_damage_cooldown_timeout():
 	damage_cooldown = true
-	animated_sprite_2d.modulate = original_modulate

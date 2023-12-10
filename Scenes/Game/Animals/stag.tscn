@@ -350,6 +350,11 @@ script = ExtResource("8_nkqbs")
 wait_time = 0.2
 autostart = true
 
+[node name="DamageCooldown" type="Timer" parent="."]
+wait_time = 0.7
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="AnimalTakeDamage" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="AnimalTakeDamage" method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="ModulateCooldown" to="AnimalTakeDamage" method="_on_damage_cooldown_timeout"]
+[connection signal="timeout" from="ModulateCooldown" to="AnimalTakeDamage" method="_on_modulate_cooldown_timeout"]
+[connection signal="timeout" from="DamageCooldown" to="AnimalTakeDamage" method="_on_damage_cooldown_timeout"]
