@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://3u0tx52f8sxw"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Animal/AnimalMovement.gd" id="1_d3eax"]
+[ext_resource type="Script" path="res://Scripts/Game/Animal/animal_functions.gd" id="1_jj5dm"]
+[ext_resource type="Script" path="res://Scripts/Game/Animal/PlayAnimalAnimation.gd" id="2_vhjwb"]
+[ext_resource type="Script" path="res://Scripts/Game/Animal/AnimalTakeDamage.gd" id="3_6est3"]
+
+[node name="AnimalFunctions" type="Node"]
+script = ExtResource("1_jj5dm")
+
+[node name="AnimalMovement" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_d3eax")
+
+[node name="PlayAnimalAnimation" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_vhjwb")
+
+[node name="AnimalTakeDamage" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_6est3")
+
+[node name="ModulateCooldown" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="DamageCooldown" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="ModulateCooldown" to="AnimalTakeDamage" method="_on_modulate_cooldown_timeout"]
+[connection signal="timeout" from="DamageCooldown" to="AnimalTakeDamage" method="_on_damage_cooldown_timeout"]
