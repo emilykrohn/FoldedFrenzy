@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bfejv2jtwjofa"]
+[gd_scene load_steps=52 format=3 uid="uid://bfejv2jtwjofa"]
 
 [ext_resource type="Script" path="res://Scenes/Game/Animals/stag.gd" id="1_5cxi5"]
 [ext_resource type="Texture2D" uid="uid://dq55ftsf6uxkd" path="res://Art/critters/stag/critter_stag_SW_run.png" id="1_esesh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cjhkvbe4gjgua" path="res://Art/critters/stag/critter_stag_NE_run.png" id="4_cfsje"]
 [ext_resource type="Script" path="res://Scripts/Game/Animal/AnimalMovement.gd" id="6_1wjy8"]
 [ext_resource type="Script" path="res://Scripts/Game/Animal/PlayAnimalAnimation.gd" id="7_lvk34"]
+[ext_resource type="Script" path="res://Scripts/Game/Animal/AnimalTakeDamage.gd" id="8_nkqbs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c83hu"]
 atlas = ExtResource("1_esesh")
@@ -341,3 +342,9 @@ script = ExtResource("6_1wjy8")
 [node name="PlayAnimalAnimation" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_lvk34")
+
+[node name="AnimalTakeDamage" type="Node" parent="."]
+script = ExtResource("8_nkqbs")
+
+[connection signal="body_entered" from="Area2D" to="AnimalTakeDamage" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="AnimalTakeDamage" method="_on_area_2d_body_exited"]
