@@ -24,3 +24,13 @@ func movement(delta):
 		direction = possible_directions[player_direction][randi() % 3]
 		has_set_direction = true
 	get_parent().position += direction.normalized() * SPEED * delta
+
+func get_direction():
+	if direction == LeftDown:
+		return "LeftDown"
+	elif direction == LeftUp:
+		return "LeftUp"
+	elif direction == RightDown:
+		return "RightDown"
+	else:
+		return "RightUp"
