@@ -15,7 +15,7 @@ func _ready():
 func _process(_delta):
 	if health <= 0:
 		$"../../".queue_free()
-	if can_be_damaged and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and damage_cooldown and spawn_cooldown and can_die:
+	if can_be_damaged and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and damage_cooldown and can_die:
 		animated_sprite_2d.modulate = Color(1,0,0)
 		health -= 1
 		can_die = false
@@ -27,6 +27,3 @@ func _on_modulate_cooldown_timeout():
 
 func _on_damage_cooldown_timeout():
 	damage_cooldown = true
-
-func _on_spawn_cooldown_timeout():
-	spawn_cooldown = true

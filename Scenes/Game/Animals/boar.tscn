@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c4pj83hls0dxk"]
+[gd_scene load_steps=30 format=3 uid="uid://c4pj83hls0dxk"]
 
 [ext_resource type="Texture2D" uid="uid://c1n25exyp04w2" path="res://Art/critters/boar/boar_SW_run_strip.png" id="1_532as"]
 [ext_resource type="Script" path="res://Scripts/Game/Animal/boar.gd" id="1_880qp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://drpi0udjsitgf" path="res://Art/critters/boar/boar_SE_idle_strip.png" id="3_csefj"]
 [ext_resource type="Texture2D" uid="uid://dkmujk4hhxsvh" path="res://Art/critters/boar/boar_NE_run_strip.png" id="4_yf7j4"]
 [ext_resource type="PackedScene" uid="uid://3u0tx52f8sxw" path="res://Scenes/Game/Animals/animal_functions.tscn" id="6_7ptys"]
+[ext_resource type="Script" path="res://Scripts/Game/Animal/AttackPlayer.gd" id="7_pdxub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tdn0o"]
 atlas = ExtResource("1_532as")
@@ -187,6 +188,9 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_4qegm")
 
 [node name="AnimalFunctions" parent="." instance=ExtResource("6_7ptys")]
+
+[node name="AttackPlayer" type="Node" parent="."]
+script = ExtResource("7_pdxub")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
