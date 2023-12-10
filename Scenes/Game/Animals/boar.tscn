@@ -165,12 +165,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r622q"]
-radius = 15.0748
+radius = 26.0432
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qegm"]
-size = Vector2(63, 58)
+size = Vector2(97, 87)
 
 [node name="Boar" type="Area2D"]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_880qp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -182,9 +184,11 @@ position = Vector2(0, 0.5)
 shape = SubResource("CircleShape2D_r622q")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 0)
+position = Vector2(2.5, -2.5)
 shape = SubResource("RectangleShape2D_4qegm")
 
 [node name="AnimalFunctions" parent="." instance=ExtResource("6_7ptys")]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=56 format=3 uid="uid://dpo4ehchb8rhu"]
+[gd_scene load_steps=58 format=3 uid="uid://dpo4ehchb8rhu"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Player/player.gd" id="1_k456v"]
 [ext_resource type="Texture2D" uid="uid://b8dealpmamjnj" path="res://Art/critters/wolf/wolf-idle.png" id="1_kh8uv"]
 [ext_resource type="Texture2D" uid="uid://bv1112ny377df" path="res://Art/critters/wolf/wolf-run.png" id="2_rtrw7"]
 [ext_resource type="Script" path="res://Scripts/Game/Player/PlayerMovement.gd" id="4_w8wrq"]
 [ext_resource type="Script" path="res://Scripts/Game/Player/PlayerAnimation.gd" id="5_lnl6y"]
+[ext_resource type="Script" path="res://Scripts/Game/Player/PlayerTakeDamage.gd" id="6_b4pcu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_myacw"]
 atlas = ExtResource("1_kh8uv")
@@ -387,9 +388,11 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_shpas"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gk3eo"]
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
-collision_mask = 14
+collision_mask = 30
 script = ExtResource("1_k456v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -402,6 +405,14 @@ frame_progress = 0.00727788
 position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_shpas")
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_gk3eo")
+
 [node name="PlayerMovement" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("4_w8wrq")
@@ -409,3 +420,13 @@ script = ExtResource("4_w8wrq")
 [node name="PlayerAnimation" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("5_lnl6y")
+
+[node name="PlayerTakeDamage" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_b4pcu")
+
+[node name="DamageCooldown" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="DamageCooldown" to="PlayerTakeDamage" method="_on_damage_cooldown_timeout"]
