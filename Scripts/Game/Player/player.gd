@@ -12,6 +12,8 @@ func _physics_process(_delta):
 			$%PlayerAnimation.play_run_animation()
 		else:
 			$%PlayerAnimation.stop_animation()
+	else:
+		get_tree().paused = true
 
 	move_and_slide()
 
