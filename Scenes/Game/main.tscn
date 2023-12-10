@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cacx2ssg873ai"]
+[gd_scene load_steps=8 format=3 uid="uid://cacx2ssg873ai"]
 
 [ext_resource type="Texture2D" uid="uid://bekl61w57ow7b" path="res://Art/isometric tileset/spritesheet.png" id="1_3myya"]
+[ext_resource type="Script" path="res://Scenes/Game/main.gd" id="1_48e3b"]
 [ext_resource type="PackedScene" uid="uid://dpo4ehchb8rhu" path="res://Scenes/Game/Player/player.tscn" id="3_j0ou4"]
 [ext_resource type="PackedScene" uid="uid://dmye257e6ggo6" path="res://Scenes/Game/Box/box.tscn" id="4_5stpy"]
 [ext_resource type="Script" path="res://Scripts/Game/Control.gd" id="4_yh28q"]
@@ -625,6 +626,7 @@ physics_layer_1/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_jl3kj")
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_48e3b")
 
 [node name="EnvironmentTileMap" type="TileMap" parent="."]
 y_sort_enabled = true
