@@ -349,7 +349,7 @@ script = ExtResource("7_lvk34")
 script = ExtResource("8_nkqbs")
 
 [node name="ModulateCooldown" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.5
 autostart = true
 
 [node name="DamageCooldown" type="Timer" parent="."]
