@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmye257e6ggo6"]
+[gd_scene load_steps=9 format=3 uid="uid://dmye257e6ggo6"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Box/box.gd" id="1_k3cjq"]
 [ext_resource type="Texture2D" uid="uid://75smewi58w2h" path="res://Art/isometric boxes - free pixel assets/boxes_SpriteSheet.png" id="1_puy3r"]
 [ext_resource type="PackedScene" uid="uid://bfejv2jtwjofa" path="res://Scenes/Game/Animals/stag.tscn" id="2_o5rm5"]
+[ext_resource type="PackedScene" uid="uid://c4pj83hls0dxk" path="res://Scenes/Game/Animals/boar.tscn" id="3_xawlw"]
 [ext_resource type="Script" path="res://Scripts/Game/Box/EnteredRange.gd" id="4_4j4ds"]
 [ext_resource type="Script" path="res://Scripts/Game/Box/Spawn.gd" id="5_jmrw1"]
 
@@ -17,6 +18,7 @@ collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_k3cjq")
 stag_scene = ExtResource("2_o5rm5")
+boar_scene = ExtResource("3_xawlw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_puy3r")
