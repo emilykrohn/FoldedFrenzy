@@ -6,9 +6,9 @@ var in_range := false
 func _process(delta):
 	if not is_attacking:
 		$AnimalFunctions/AnimalMovement.movement(delta)
+		$AnimalFunctions/PlayAnimalAnimation.play_animation()
 	else:
 		$AttackPlayer.attack(delta)
-	$AnimalFunctions/PlayAnimalAnimation.play_animation()
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
