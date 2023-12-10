@@ -20,10 +20,10 @@ var possible_directions = {
 
 func movement(delta):
 	if has_set_direction == false:
-		player_direction = $"../../Player/PlayerMovement".direction
+		player_direction = $"../../../Player/PlayerMovement".direction
 		direction = possible_directions[player_direction][randi() % 3]
 		has_set_direction = true
-	get_parent().position += direction.normalized() * SPEED * delta
+	$"../../".position += direction.normalized() * SPEED * delta
 
 func get_direction():
 	if direction == LeftDown:
