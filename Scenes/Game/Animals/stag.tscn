@@ -339,7 +339,6 @@ shape = SubResource("RectangleShape2D_iouyq")
 [node name="AnimalFunctions" parent="." instance=ExtResource("6_k5vyy")]
 
 [node name="SpawnCooldown" type="Timer" parent="."]
-wait_time = 0.8
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
