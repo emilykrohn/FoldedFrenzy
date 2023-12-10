@@ -316,9 +316,11 @@ animations = [{
 size = Vector2(16.5, 15.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iouyq"]
-size = Vector2(39, 41)
+size = Vector2(86, 75)
 
 [node name="Stag" type="Area2D"]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_5cxi5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -332,7 +334,7 @@ shape = SubResource("RectangleShape2D_1k23o")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, -1.5)
+position = Vector2(3, -0.5)
 shape = SubResource("RectangleShape2D_iouyq")
 
 [node name="AnimalMovement" type="Node" parent="."]
@@ -351,7 +353,7 @@ wait_time = 0.2
 autostart = true
 
 [node name="DamageCooldown" type="Timer" parent="."]
-wait_time = 0.7
+wait_time = 0.5
 autostart = true
 
 [connection signal="body_entered" from="Area2D" to="AnimalTakeDamage" method="_on_area_2d_body_entered"]
