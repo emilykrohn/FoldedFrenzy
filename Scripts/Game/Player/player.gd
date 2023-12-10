@@ -13,7 +13,7 @@ func _physics_process(_delta):
 		else:
 			$%PlayerAnimation.stop_animation()
 	else:
-		get_tree().paused = true
+		$"../Control".set_visible(true)
 
 	move_and_slide()
 
