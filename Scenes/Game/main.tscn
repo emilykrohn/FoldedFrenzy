@@ -662,6 +662,7 @@ position = Vector2(83, 65)
 position = Vector2(-10, 143)
 
 [node name="Control2" type="Control" parent="."]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_left = -192.0
@@ -670,10 +671,18 @@ offset_right = 192.0
 offset_bottom = 200.0
 
 [node name="Label" type="Label" parent="Control2"]
+z_index = 1
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Health: 3"
+
+[node name="Label2" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 225.0
+offset_right = 380.0
+offset_bottom = 26.0
+text = "Press ESC to Restart"
 
 [node name="Control" type="Control" parent="."]
 visible = false
