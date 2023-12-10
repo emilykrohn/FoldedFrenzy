@@ -7,4 +7,3 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_SPACE) and $%EnteredRange.in_range:
 		queue_free()
 		$%Spawn.spawn_stag(stag_scene)
-

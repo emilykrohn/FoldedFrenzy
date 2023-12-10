@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bekl61w57ow7b" path="res://Art/isometric tileset/spritesheet.png" id="1_3myya"]
 [ext_resource type="PackedScene" uid="uid://dpo4ehchb8rhu" path="res://Scenes/Game/Player/player.tscn" id="3_j0ou4"]
-[ext_resource type="PackedScene" uid="uid://dmye257e6ggo6" path="res://Scenes/Game/box.tscn" id="4_5stpy"]
+[ext_resource type="PackedScene" uid="uid://dmye257e6ggo6" path="res://Scenes/Game/Box/box.tscn" id="4_5stpy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jl3kj"]
 texture = ExtResource("1_3myya")
@@ -644,6 +644,7 @@ position = Vector2(0, 92)
 zoom = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("3_j0ou4")]
+unique_name_in_owner = true
 
 [node name="Boxes" type="Node" parent="."]
 
